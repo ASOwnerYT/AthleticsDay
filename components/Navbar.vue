@@ -34,7 +34,7 @@ function toggleMenu() {
 <style>
 nav {
   /* Make navbar stay at top of screen (static) */
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;

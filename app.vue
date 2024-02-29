@@ -1,11 +1,26 @@
 <template>
   <div>
+    <!-- Navbar (shared on all pages) -->
     <Navbar />
+
+    <!-- The page content is automaticially inserted here by Nuxt. 
+      For example, the HTML inside the <template> tag of pages/index.vue will be inserted here -->
     <NuxtPage />
+
+    <!-- Footer (shared on all pages)-->
+    <footer>
+      <div class="container">
+        <p>Copyright © 2023 John-Allan Lambert - All Rights Reserved.</p>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style>
+/* 
+* Styles that are applied to ALL pages go here
+*/
+
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap");
 
@@ -48,13 +63,19 @@ h2 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
 p,
@@ -118,5 +139,18 @@ a:hover,
   transition:
     box-shadow var(--transition),
     -webkit-box-shadow var(--transition);
+}
+
+/* Section */
+section {
+  margin-bottom: var(--spacing);
+}
+
+/* Footer */
+footer {
+  color: white;
+  background-color: var(--accent);
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
 }
 </style>

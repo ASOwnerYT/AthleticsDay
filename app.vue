@@ -1,18 +1,17 @@
 <template>
   <div>
-    <!-- Navbar (shared on all pages) -->
+    <!-- Navbar (shared on all pages) 
+    Note: The code for components like these are in the /components folder 
+    Located in /components/Navbar.vue -->
     <Navbar />
 
     <!-- The page content is automaticially inserted here by Nuxt. 
       For example, the HTML inside the <template> tag of pages/index.vue will be inserted here -->
     <NuxtPage />
 
-    <!-- Footer (shared on all pages)-->
-    <footer>
-      <div class="container">
-        <p>Copyright © 2023 John-Allan Lambert - All Rights Reserved.</p>
-      </div>
-    </footer>
+    <!-- Footer (shared on all pages)
+    Located in /components/Footer.vue -->
+    <Footer />
   </div>
 </template>
 
@@ -144,13 +143,5 @@ a:hover,
 /* Section */
 section {
   margin-bottom: var(--spacing);
-}
-
-/* Footer */
-footer {
-  color: white;
-  background-color: var(--accent);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
 }
 </style>

@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from "vue";
 
+// Mobile drop-down menu is hidden by default
 const showMenu = ref(false);
 
-// Mobile menu
+// Show/hide mobile drop-down menu
 function toggleMenu() {
   showMenu.value = !showMenu.value;
 }
@@ -19,9 +20,14 @@ function toggleMenu() {
           </NuxtLink>
         </div>
 
-        <button @click="toggleMenu" class="menu-icon">Menu</button>
+        <v-icon
+          name="hi-menu"
+          scale="1.5"
+          @click="toggleMenu"
+          class="menu-icon"
+        ></v-icon>
       </div>
-      <ul class="navbar-links" :class="{active: showMenu}">
+      <ul class="navbar-links" :class="{ active: showMenu }">
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/">Pollution</NuxtLink></li>
         <li><NuxtLink to="/">Freshwater weeds</NuxtLink></li>

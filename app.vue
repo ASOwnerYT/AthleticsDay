@@ -1,7 +1,10 @@
 <template>
   <div>
+    <!-- Footer (shared on all pages)
+    Located in /components/BackToTop.vue -->
+    <BackToTop />
+
     <!-- Navbar (shared on all pages) 
-    Note: The code for components like these are in the /components folder 
     Located in /components/Navbar.vue -->
     <Navbar />
 

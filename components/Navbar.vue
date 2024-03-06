@@ -20,12 +20,9 @@ function toggleMenu() {
           </NuxtLink>
         </div>
 
-        <v-icon
-          name="hi-menu"
-          scale="1.5"
-          @click="toggleMenu"
-          class="menu-icon"
-        ></v-icon>
+        <button class="menu-icon" @click="toggleMenu">
+          <v-icon name="hi-menu" scale="1.5"></v-icon>
+        </button>
       </div>
       <ul class="navbar-links" :class="{ active: showMenu }">
         <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -37,7 +34,7 @@ function toggleMenu() {
   </nav>
 </template>
 
-<style>
+<style scoped>
 nav {
   /* Make navbar stay at top of screen (static) */
   position: sticky;
@@ -86,6 +83,10 @@ nav .container li a:hover {
 
 .menu-icon {
   font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
 }
 
 /* Add styles for mobile view */

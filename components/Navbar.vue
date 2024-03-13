@@ -8,11 +8,45 @@ const showMenu = ref(false);
 function toggleMenu() {
   showMenu.value = !showMenu.value;
 }
+
+// Countdown text
+const countdown = ref("");
+
+let athelticsDayDate = new Date("Jan 5, 2030 15:37:25").getTime();
+
+function updateCountdown() {
+  // Current date & time
+  let currentTime = new Date().getTime();
+
+  // Time until Athletics Day
+  let distance = athelticsDayDate - currentTime;
+
+  // Convert to readable format
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Set countdown text
+  if (distance < 0) {
+    // Expired
+    clearInterval(updateCountdown); // Stop from updating
+    countdown.value = "EXPIRED"; // Set text
+  } else {
+    countdown.value =
+    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  }
+}
+
+// TODO: fix
+onBeforeMount(() => {
+  setInterval(updateCountdown(), 1000);
+});
 </script>
 
 <template>
   <nav id="navbar">
-    <div class="container">
+    <div class="container main">
       <div class="navbar-header">
         <div>
           <NuxtLink to="/">
@@ -26,11 +60,17 @@ function toggleMenu() {
       </div>
       <ul class="navbar-links" :class="{ active: showMenu }">
         <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/">Pollution</NuxtLink></li>
-        <li><NuxtLink to="/">Freshwater weeds</NuxtLink></li>
+        <li><NuxtLink to="/winners">Winners Podium</NuxtLink></li>
+        <li><NuxtLink to="/gallery">Gallery</NuxtLink></li>
+        <li><NuxtLink to="/contact">Contact</NuxtLink></li>
         <li><NuxtLink to="/about">About</NuxtLink></li>
       </ul>
     </div>
+    <client-only>
+      <div class="container countdown">
+      <p>{{ countdown }}</p>
+    </div>
+    </client-only>
   </nav>
 </template>
 
@@ -89,6 +129,20 @@ nav .container li a:hover {
   color: inherit;
 }
 
+#navbar .container.countdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: red;
+}
+
+#navbar .container.countdown p {
+  margin-bottom: 0;
+}
+
 /* Add styles for mobile view */
 @media (max-width: 500px) {
   .navbar-links {
@@ -140,7 +194,7 @@ nav .container li a:hover {
     display: none;
   }
 
-  #navbar .container {
+  #navbar .container.main {
     display: flex;
     flex-direction: row;
     align-items: center;

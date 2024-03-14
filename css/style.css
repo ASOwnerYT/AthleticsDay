@@ -411,11 +411,6 @@ nav .container li a.active {
   color: inherit;
 }
 
-.menu-icon svg {
-  width: 1.5em;
-  height: 1.5em;
-}
-
 #navbar .container.countdown {
   display: flex;
   flex-direction: row;
@@ -522,7 +517,7 @@ footer {
  * Back to top button
  */
 
-.backToTopButton {
+#backToTopButton {
   position: fixed;
   right: 2rem;
   bottom: 2rem;
@@ -535,10 +530,10 @@ footer {
   cursor: pointer;
   text-align: center;
   background-color: lightblue;
-  opacity: 100%;
+  opacity: 0%;
   transition: opacity 0.5s;
 }
 
-.backToTopButton.hidden {
-  opacity: 0%;
+#backToTopButton.show {
+  opacity: 100%;
 }

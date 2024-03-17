@@ -537,3 +537,12 @@ footer {
 #backToTopButton.show {
   opacity: 100%;
 }
+
+/*
+ * Form
+*/
+
+form {
+  display: flex;
+  flex-direction: column;
+}

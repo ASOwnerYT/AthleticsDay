@@ -43,7 +43,7 @@ button.onclick = function () {
 const countdownText = document.getElementById("countdown");
 
 // Date & time of event
-let athelticsDayDate = new Date("Mar 15, 2024 10:37:25").getTime();
+let athelticsDayDate = new Date("Feb 16, 2025 9:00:00").getTime();
 
 function updateCountdown() {
   // Current date & time
@@ -65,8 +65,13 @@ function updateCountdown() {
     countdownText.innerText = "EXPIRED"; // Set text
   } else {
     countdownText.innerText =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s " + "until Athetics Day ";
   }
 }
 
 setInterval(updateCountdown, 1000);
+
+/*
+ * Carousel
+ */
+

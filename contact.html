@@ -13,8 +13,18 @@
     <meta property="og:image" content="" />
 
     <!-- FAVICONS STARTED -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/ico/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/ico/favicon-32x32.png"
+    />
     <link rel="apple-touch-icon" href="/ico/apple-touch-icon.png" />
     <link rel="manifest" href="/ico/manifest.webmanifest" />
     <!-- FAVICONS ENDED -->
@@ -59,35 +69,20 @@
       </div>
     </nav>
 
-    <div class="card"></div>
-
-    <div class="divider"></div>
     <section class="container">
-      <h1>Rutherford College Athletics Day</h1>
-      <p>
-        Consequuntur accusantium delectus iste rerum at nisi quos. Voluptatem
-        architecto dolores tempora eius eveniet. Nobis saepe assumenda deleniti
-        iste animi quo quia. Necessitatibus molestias quis amet rerum quis. Et
-        in beatae et ab. Maiores reiciendis voluptas debitis maxime nisi
-        inventore.
-      </p>
-    </section>
-    <section class="container">
-      <h1>Dates</h1>
-      <p>
-        Consequuntur accusantium delectus iste rerum at nisi quos. Voluptatem
-        architecto dolores tempora eius eveniet. Nobis saepe assumenda deleniti
-        iste animi quo quia. Necessitatibus molestias quis amet rerum quis. Et
-        in beatae et ab. Maiores reiciendis voluptas debitis maxime nisi
-        inventore.
-      </p>
-    </section>
+      <h1>Contact</h1>
+      <form action="/formsubmit.html" method="GET">
+        <label for="Name">Name: </label>
+        <input type="text" name="Name"/>
 
-    <footer>
-      <div class="container">
-        <p>Copyright © 2023 John-Allan Lambert - All Rights Reserved.</p>
-      </div>
-    </footer>
+        <label for="Email">Email: </label>
+        <input type="email" name="Email" />
+
+        <label for="firstname">Message: </label>
+        <textarea name="Message"></textarea>
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
 
     <div>
       <button id="backToTopButton">

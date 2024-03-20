@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -19,6 +20,7 @@ html {
 
   /* Accent colour*/
   --accent: #034ea2;
+  --accent-secondary: #085fc3;
 
   /* Spacing */
   --section-spacing: 6rem;
@@ -327,6 +329,15 @@ a:hover,
   }
 }
 
+/* Centered container (centered verticially and horizontally on page) */
+.centeredContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 /*
 * Misc styling
 */
@@ -375,6 +386,8 @@ nav {
 /* Reset default styling on lists */
 nav .container ul {
   list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 0;
 }
 
 /* Position nav items correctly */
@@ -529,7 +542,8 @@ footer {
   padding: 0.5rem;
   cursor: pointer;
   text-align: center;
-  background-color: lightblue;
+  color: white;
+  background-color: var(--accent-secondary);
   opacity: 0%;
   transition: opacity 0.5s;
 }
@@ -542,7 +556,34 @@ footer {
  * Form
 */
 
-form {
-  display: flex;
-  flex-direction: column;
+/* Style form inputs */
+input[type=text], input[type=email], select, textarea {
+  width: 100%; /* Full width */
+  padding: 1em;
+  border: 1px solid #ccc; /* Border */
+  border-radius: 0.5em; /* Rounded corners */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; 
+  margin-bottom: 16px;
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: var(--accent);
+  color: white;
+  padding: 1em 1.75em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* Lists */
+ol, 
+ul {
+  margin-left: 2em;
+  margin-bottom: 1em;
 }

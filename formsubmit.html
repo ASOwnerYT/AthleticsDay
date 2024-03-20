@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="description" content="" />
+
+    <meta property="og:title" content="Rutherford College Athletics Day" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- FAVICONS STARTED -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/ico/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/ico/favicon-32x32.png"
+    />
+    <link rel="apple-touch-icon" href="/ico/apple-touch-icon.png" />
+    <link rel="manifest" href="/ico/manifest.webmanifest" />
+    <!-- FAVICONS ENDED -->
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <div class="centeredContainer">
+      <h1>Form content:</h1>
+      <p id="showFormContent"></p>
+      <a href="/contact.html">Go back</a>
+    </div>
+
+    <script>
+      // Parse query string (the params after "?" in the URL, used by GET requests)
+      let params = new URLSearchParams(document.location.search);
+
+      // Form content
+      let name = params.get("Name");
+      let email = params.get("Email");
+      let message = params.get("Message");
+
+      // Set text to display to user
+      let displayText = `Name: ${name}
+      Email: ${email}
+      Message: ${message}`;
+
+      // Display text to user
+      document.getElementById("showFormContent").innerText = displayText;
+    </script>
+  </body>
+</html>

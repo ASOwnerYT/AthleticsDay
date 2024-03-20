@@ -65,13 +65,23 @@ function updateCountdown() {
     countdownText.innerText = "EXPIRED"; // Set text
   } else {
     countdownText.innerText =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s " + "until Athetics Day ";
+      days +
+      "d " +
+      hours +
+      "h " +
+      minutes +
+      "m " +
+      seconds +
+      "s " +
+      "until Athetics Day ";
   }
 }
 
 setInterval(updateCountdown, 1000);
 
 /*
- * Carousel
- */
-
+Forms
+I have moved this to the <script> tags in formsubmit.html because
+1. the javascript is only for formsubmit.html, it doesnt need to affect any other page
+2. it doesnt work if i put it here (i have no idea why)
+*/

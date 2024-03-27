@@ -4,9 +4,10 @@
  */
 
 // Webpack bundles all these JS files into one file
-import navbar from './navbar'; // Navbar
-import backToTop from './backToTop'; // Back to top button
-import countdown from './countdown'; // Countdown
+import './navbar'; // Navbar
+import './backToTop'; // Back to top button
+import './countdown'; // Countdown
+import './slider'; // Slider
 
 /*
 Forms
